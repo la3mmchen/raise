@@ -29,12 +29,8 @@ class userInput extends multiConstructor {
 		private function rule_addIdea() {
 				$this->rule = array("idea_name"=>"",
 						"idea_email"=>"", 
-						"idea_description");
-				);
+						"idea_description")
+				 ;
 		}
-		
-
 }
-
-
 ?>
