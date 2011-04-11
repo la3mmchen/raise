@@ -1,10 +1,6 @@
 <?php
 class vwe_company extends MultiConstructor {
 	
-	private function __construct0() {
-
-	}
-	
 	/* prepares data for view */
 	public function view($array) {
 		echo __CLASS__ . "=>" . __METHOD__ . "\n";
