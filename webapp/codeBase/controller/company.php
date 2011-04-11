@@ -16,6 +16,7 @@ class company extends MultiConstructor {
 	/* creates new company */
 	public function create() {
 		echo __CLASS__ . "=>" . __METHOD__ . "\n";
+		$this->vwe_handle->view($this->mdl_handle->view($this->mdl_handle->create($GLOBALS["GET"])));
 	}
 	/* lists all companies */
 	public function index() {

@@ -26,9 +26,8 @@
 /* generic includes */
 require_once("codeBase/config.php");
 /* generic classes */
-require_once($GLOBALS'filePath_base']."multiConstructor.php");
+require_once($GLOBALS['filePath_base']."multiConstructor.php");
 require_once($GLOBALS['filePath_base']."userInput.php");
-$GLOBALS["lala"] = "lelel";
 class routing extends multiConstructor {
 	private $controller;
 	private $action;
@@ -68,6 +67,7 @@ class routing extends multiConstructor {
 		$this->action = $allParams[2];
 		$this->specificID = $allParams[3];
 		$this->postParms = $_GET;
+		$GLOBALS["GET"] = $_GET;
 	}
 	
 	public function getPostParm($param) {

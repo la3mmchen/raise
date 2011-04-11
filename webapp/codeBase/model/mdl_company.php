@@ -31,6 +31,16 @@ class mdl_company extends MultiConstructor {
 		return self::$dbInt->loadOneFromDb(preg_replace("/mdl_/", "tbl_", __CLASS__),$this->var2array(), array("company_id"=>$this->mdl_company_id));
 	}
 	
+	public function create($array) {
+		foreach($this->var2array() as $key => $value) {
+			$tmp = "mdl_".$key;
+			isset($array[$key]) ? $this->$tmp = $array[$key] : null;
+		}
+		/* dont give an id to a new db-entry*/
+		unset($this->mdl_company_id);
+		return self::$dbInt->insertToDb(preg_replace("/mdl_/", "tbl_", __CLASS__), $this->var2array());
+	}
+	
 	private function buildDbInterface() {
 		self::$dbInt = new dbInterface();
 	}
