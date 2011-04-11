@@ -17,7 +17,7 @@
  * @package 
  * @since 0.1
  *
- * @property String  $_GLOBAL['filePath_base']
+ * @property String  $GLOBALS['filePath_base']
  */
-$_GLOBAL['filePath_base'] = "codeBase/"
+$GLOBALS['filePath_base'] = "codeBase/"
 ?>

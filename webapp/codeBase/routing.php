@@ -26,8 +26,9 @@
 /* generic includes */
 require_once("codeBase/config.php");
 /* generic classes */
-require_once($_GLOBAL['filePath_base']."multiConstructor.php");
-require_once($_GLOBAL['filePath_base']."userInput.php");
+require_once($GLOBALS'filePath_base']."multiConstructor.php");
+require_once($GLOBALS['filePath_base']."userInput.php");
+$GLOBALS["lala"] = "lelel";
 class routing extends multiConstructor {
 	private $controller;
 	private $action;
@@ -38,7 +39,7 @@ class routing extends multiConstructor {
 										);
 										/* TODO: 
 										 * what's wrong with this?:
-										 * "profile" => $_GLOBAL['filePath_base']./controller/profile.php" **/
+										 * "profile" => $GLOBALS['filePath_base']./controller/profile.php" **/
 	private static $map2default = array("profile" => "index", 
 										"company" => "index"
 										);
