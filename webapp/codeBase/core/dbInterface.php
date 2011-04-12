@@ -29,7 +29,7 @@ class dbInterface {
 	public function loadFromDb($table, $array) {	
 		$sql  = "SELECT ";
 		$sql .= " `".implode("`, `", array_keys($array))."`";
-		$sql .= " from `raise`.`".$table."`";	
+		$sql .= " from `raise`.`".$table."`";
 		return $this->loadQuery($sql);
 	}
 	

@@ -26,8 +26,11 @@
 /* generic includes */
 require_once("codeBase/config.php");
 /* generic classes */
-require_once($GLOBALS['filePath_base']."multiConstructor.php");
-require_once($GLOBALS['filePath_base']."userInput.php");
+require_once($GLOBALS['filePath_base']."core/multiConstructor.php");
+require_once($GLOBALS['filePath_base']."core/userInput.php");
+require_once($GLOBALS['filePath_base']."core/controller.php");
+require_once($GLOBALS['filePath_base']."core/model.php");
+require_once($GLOBALS['filePath_base']."core/view.php");
 class routing extends multiConstructor {
 	private $controller;
 	private $action;

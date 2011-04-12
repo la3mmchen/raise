@@ -22,7 +22,7 @@
  */
 $_GLOBAL["debug"] = true; /* do we want to run in debug mode? */
 /* includes for index.php */
-require_once("codeBase/logger.php");
+require_once("codeBase/core/logger.php");
 require_once("codeBase/routing.php");
 /* we need a logger object and we store the reference in our GLOBALS array*/
 $_GLOBAL["logger"] = new logger();
