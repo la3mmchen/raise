@@ -1,7 +1,5 @@
 <?php
-class multiConstructor {
-		protected $mdl_handle; 
-		protected $vwe_handle;
+abstract class multiConstructor {
 		/**
 		*  php doesn't allow multiple constructors so we have to decide
 		* */
@@ -36,23 +34,6 @@ class multiConstructor {
 		 * */
 		public function __construct2($inputValue1, $inputValue2) {
 			// to be implemented in subclass
-		}
-		
-		/* generic functions */
-		/**
-		 * creates model 
-		 * */
-		protected function mdl_create() {
-			$str = "mdl_".get_class($this);
-			$this->mdl_handle = new $str();	
-		}
-		
-		/**
-		 * creates view 
-		 * */
-		protected function vwe_create() {
-			$str = "vwe_".get_class($this);
-			$this->vwe_handle = new $str();	
 		}
 }
 ?>
