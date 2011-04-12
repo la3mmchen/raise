@@ -9,6 +9,9 @@ abstract class multiConstructor {
 				file_exists("codeBase/view/vwe_".get_class($this).".php") ? require_once("codeBase/view/vwe_".get_class($this).".php") : NULL;
 				/* generic include dbInterface for model classes */
 				preg_match("/mdl_/i",get_class($this)) == 1 ? include_once("codeBase/core/dbInterface.php") : NULL;
+				/* generic include webapp for view classes */
+				preg_match("/vwe_/i",get_class($this)) == 1 ? include_once("codeBase/core/html.php") : NULL;
+				preg_match("/vwe_/i",get_class($this)) == 1 ? include_once("codeBase/core/webapp.php") : NULL;
 				//file_exists("codeBase/controller/".get_class($this).".php") ? include_once("codeBase/controller/".get_class($this).".php") : NULL;
 				/* map constructor plus args to methode _construt0...n*/
 				$in = func_get_args();

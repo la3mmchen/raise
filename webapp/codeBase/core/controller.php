@@ -48,5 +48,13 @@ abstract class controller extends multiConstructor {
 			echo __CLASS__ . "=>" . __METHOD__ . "\n";
 			$this->vwe_handle->index($this->mdl_handle->index());
 		}
+		
+		/**
+		 * create a form for adding a new object 
+		 * */
+		 public function add() {
+			echo __CLASS__ . "=>" . __METHOD__ . "\n";
+			//$this->vwe_handle->add($this->mdl_handle->add());
+		 }
 }
 ?>

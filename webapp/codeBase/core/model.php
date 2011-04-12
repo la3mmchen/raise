@@ -28,6 +28,10 @@ abstract class model extends multiConstructor {
 		return self::$dbInt->insertToDb(preg_replace("/mdl_/", "tbl_", get_class($this)), $this->var2array());
 	}
 	
+	public function add() {
+		return $this->var2array();
+	}
+	
 	private function buildDbInterface() {
 		self::$dbInt = new dbInterface();
 	}

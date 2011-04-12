@@ -29,6 +29,11 @@ abstract class view extends multiConstructor {
 			}
 		}
 	}
-
+	/* display form for adding 
+	public function add($array) {
+		$wp = new webapp();
+		$wp->form($array);	
+	}
+*/
 }
 ?>

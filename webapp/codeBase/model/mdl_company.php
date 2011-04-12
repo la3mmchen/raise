@@ -15,5 +15,6 @@ class mdl_company extends model {
 		}
 		return $tmpArra;
 	}
+	
 }
 ?>
