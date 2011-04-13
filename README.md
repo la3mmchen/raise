@@ -1,6 +1,6 @@
-General conditions: <br/>
-"Keep it smart and simple in every way!" <br/>
-- Business plan <br/>
-- Functionality <br/>
-- Layout <br/>
-- Users without IT affinity should able to use the portal in a very easy way <br/>
+<h2> general guidelines </h2>
+<ul>
+	<li>Keep it smart and simple in every way!</li>
+	<li>communication is always secure and authenticated</li>
+	<li>trusted platform</li>
+</ul>
