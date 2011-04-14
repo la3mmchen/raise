@@ -3,7 +3,7 @@ abstract class controller extends multiConstructor {
 		protected $mdl_handle; 
 		protected $vwe_handle;
 		
-		private function __construct0() {
+		protected function __construct0() {
 			$this->mdl_create();
 			$this->vwe_create();
 	}
@@ -14,7 +14,7 @@ abstract class controller extends multiConstructor {
 		 * */
 		protected function mdl_create() {
 			$str = "mdl_".get_class($this);
-			$this->mdl_handle = new $str();	
+			$this->mdl_handle = new $str();
 		}
 		
 		/**
@@ -30,7 +30,7 @@ abstract class controller extends multiConstructor {
 		 *  prepares data for view 
 		 * */
 		public function view($specificID) {
-			echo __CLASS__ . "=>" . __METHOD__ . "\n";
+			echo get_class($this) . "=>" . __METHOD__ . "\n";
 			$this->vwe_handle->view($this->mdl_handle->view($specificID));
 		}
 		
@@ -38,23 +38,24 @@ abstract class controller extends multiConstructor {
 		 *  creates new company 
 		 * */
 		public function create() {
-			echo __CLASS__ . "=>" . __METHOD__ . "\n";
-			$this->vwe_handle->view($this->mdl_handle->view($this->mdl_handle->create($GLOBALS["GET"])));
+			var_dump($GLOBALS["PARAMS"]);
+			echo get_class($this) . "=>" . __METHOD__ . "\n";
+			$this->vwe_handle->view($this->mdl_handle->view($this->mdl_handle->create($GLOBALS["PARAMS"])));
 		}
 		/**
 		 *  lists all companies 
 		 * */
 		public function index() {
-			echo __CLASS__ . "=>" . __METHOD__ . "\n";
-			$this->vwe_handle->index($this->mdl_handle->index());
+			echo get_class($this) . "=>" . __METHOD__ . "\n";
+			$this->vwe_handle->index(get_class($this), $this->mdl_handle->index());
 		}
 		
 		/**
 		 * create a form for adding a new object 
 		 * */
 		 public function add() {
-			echo __CLASS__ . "=>" . __METHOD__ . "\n";
-			//$this->vwe_handle->add($this->mdl_handle->add());
+			echo get_class($this) . "=>" . __METHOD__ . "\n";
+			$this->vwe_handle->add(get_class($this), $this->mdl_handle->add());
 		 }
 }
 ?>

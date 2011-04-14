@@ -4,6 +4,7 @@ abstract class multiConstructor {
 		*  php doesn't allow multiple constructors so we have to decide
 		* */
 		public function __construct() {
+				//echo get_class($this) . "=>" . __METHOD__ . "\n";
 				/* generic include model files */
 				file_exists("codeBase/model/mdl_".get_class($this).".php") ? require_once("codeBase/model/mdl_".get_class($this).".php") : NULL;
 				file_exists("codeBase/view/vwe_".get_class($this).".php") ? require_once("codeBase/view/vwe_".get_class($this).".php") : NULL;
@@ -24,18 +25,18 @@ abstract class multiConstructor {
 		/**
 		 *  constructor for no input
 		 * */
-		private function __construct0() {
+		protected function __construct0() {
 			// to be implemented in subclass
 		}
 		/**
 		 *  constructor for one input value
 		 * */
-		private function __construct1($inputValue1) {
+		protected function __construct1($inputValue1) {
 			// to be implemented in subclass
 		}
 		/*  constructor for two input value
 		 * */
-		public function __construct2($inputValue1, $inputValue2) {
+		protected function __construct2($inputValue1, $inputValue2) {
 			// to be implemented in subclass
 		}
 }

@@ -13,20 +13,21 @@ abstract class html {
 	/**
 	 * creates form 
 	 * */
-	public function form ($legend, $array) {
-		$html = '<form>\n';
-		$html .= '<fieldset>\n';	
-		$html .= '<legend>'.$legend.'</legend>\n';	
+	public function form ($target,$legend, $array) {
+		$html = '<form method="post" action="'.$GLOBALS["webAppPath"].'/'.$target.'">';
+		$html .= '<fieldset>';	
+		$html .= '<legend>'.$legend.'</legend>';	
 		foreach ($array as $key => $value) {
 				$html .= '<div>';
             	$html .= '<label for="'.$key.'">'.$key.'</label>';
-            	$html .= '<input type="'.$key.'" id="'.$key.'" required="required" class="box_shadow" name="idea_name"/>';
+            	$html .= '<input type="'.$key.'" id="'.$key.'" required="required" class="box_shadow" name="'.$key.'"/>';
 				$html .= '</div>';			
 		}
-		$html .= '</fieldset>\n';	
-		$html .= '</form>\n';	
+		$html .= '<input type="submit" name="submit" value="add"/>';
+		$html .= '<input type="reset" name="reset" value="clear"/>';
+		$html .= '</fieldset>';
+		$html .= '</form>';
 		return $html;
-		
 	 }
 
 }

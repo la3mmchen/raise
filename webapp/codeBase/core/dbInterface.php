@@ -23,6 +23,7 @@ class dbInterface {
 		$sql  = "INSERT INTO `raise`.`".$table."`";	
 		$sql .= " (`".implode("`, `", array_keys($array))."`)";
 		$sql .= " VALUES ('".implode("', '", $array)."') ";
+		var_dump($sql);
 		return $this->executeQuery($sql);
 	}
 	

@@ -46,7 +46,7 @@ class routing extends multiConstructor {
 										"company" => "index"
 										);
 	
-	private function __construct0() {
+	protected function __construct0() {
 		$this->getInputParams();
 		/**
 		 * TODO: what about user input? **/
@@ -70,7 +70,7 @@ class routing extends multiConstructor {
 		$this->action = $allParams[2];
 		$this->specificID = $allParams[3];
 		$this->postParms = $_GET;
-		$GLOBALS["GET"] = $_GET;
+		$GLOBALS["PARAMS"] = $_POST;
 	}
 	
 	public function getPostParm($param) {

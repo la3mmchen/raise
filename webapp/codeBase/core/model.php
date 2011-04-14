@@ -1,21 +1,21 @@
 <?php
 abstract class model extends multiConstructor {
-		private static $dbInt;
+	private $dbInt;
 		
-	private function __construct0() {
+	protected function __construct0() {
 		$this->buildDbInterface();
 	}
 	
 	abstract protected function var2array(); // needs to be implemented in subclass
 	
 	public function index() {
-		return self::$dbInt->loadFromDb(preg_replace("/mdl_/", "tbl_", get_class($this)),$this->var2array());
+		return $this->dbInt->loadFromDb(preg_replace("/mdl_/", "tbl_", get_class($this)),$this->var2array());
 		
 	}
 	
 	public function view($specificId) {
 		$this->mdl_company_id = $specificId;
-		return self::$dbInt->loadOneFromDb(preg_replace("/mdl_/", "tbl_", get_class($this)),$this->var2array(), array("company_id"=>$this->mdl_company_id));
+		return $this->dbInt->loadOneFromDb(preg_replace("/mdl_/", "tbl_", get_class($this)),$this->var2array(), array("company_id"=>$this->mdl_company_id));
 	}
 	
 	public function create($array) {
@@ -25,7 +25,7 @@ abstract class model extends multiConstructor {
 		}
 		/* dont give an id to a new db-entry*/
 		unset($this->mdl_company_id);
-		return self::$dbInt->insertToDb(preg_replace("/mdl_/", "tbl_", get_class($this)), $this->var2array());
+		return $this->dbInt->insertToDb(preg_replace("/mdl_/", "tbl_", get_class($this)), $this->var2array());
 	}
 	
 	public function add() {
@@ -33,7 +33,7 @@ abstract class model extends multiConstructor {
 	}
 	
 	private function buildDbInterface() {
-		self::$dbInt = new dbInterface();
+		$this->dbInt = new dbInterface();
 	}
 }
 ?>
