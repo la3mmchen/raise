@@ -1,10 +1,12 @@
 <?php
 abstract class view extends multiConstructor {
+	private $wp;
 	/* defines __construct() for view class */
 	public function __construct() {
 			preg_match("/vwe_/i",get_class($this)) == 1 ? include_once("codeBase/core/html.php") : NULL;
 			preg_match("/vwe_/i",get_class($this)) == 1 ? include_once("codeBase/core/webapp.php") : NULL;
-			file_exists("codeBase/view/vwe_".get_class($this).".php") ? require_once("codeBase/view/vwe_".get_class($this).".php") : NULL;
+			
+			$this->wp = new webapp();
 			
 			/* map constructor plus args to methode _construt0...n*/
 			$in = func_get_args();
@@ -16,11 +18,13 @@ abstract class view extends multiConstructor {
 	
 	/* prepares data for view */
 	public function view($array) {
+		$wpIn = "";
 		foreach ($array as $i) {
 			foreach ($i as $key => $value) {
-				echo "<li>".$key." => ".$value."</li>";
+				$wpIn .= "<li>".$key." => ".$value."</li>";
 			}
 		}
+		echo $this->wp->out($wpIn);
 	}
 	
 	/* creates new  */
@@ -30,22 +34,22 @@ abstract class view extends multiConstructor {
 	
 	/* lists all  */
 	public function index($cntl, $array) {
-		echo get_class($this) . "=>" . __METHOD__ . "\n";
+		$wpIn = "";
 		foreach ($array as $i) {
 			foreach ($i as $key => $value) {
 				if (preg_match("/company_id/", $key) > 0) {
-					echo '<li><a href="'.$GLOBALS["webAppPath"].'/'.$cntl.'/view/'.$value.'">'.$key." => ".$value.'</a></li>';
+					$wpIn .= '<li><a href="'.$GLOBALS["webAppPath"].'/'.$cntl.'/view/'.$value.'">'.$key." => ".$value.'</a></li>';
 				}
 				else { 
-					echo "<li>".$key." => ".$value."</li>";
+					$wpIn .= "<li>".$key." => ".$value."</li>";
 				}
 			}
 		}
+		echo $this->wp->out($wpIn);
 	}
 	/* display form for adding */
 	public function add($cntl,$array) {
-		$wp = new webapp();
-		echo $wp->form($cntl.'/create', "add a new object", $array);	
+		echo $this->wp->form($cntl.'/create', "add a new object", $array);	
 	}
 }
 ?>

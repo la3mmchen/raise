@@ -45,7 +45,6 @@ class routing extends multiConstructor {
 	private static $map2default = array("profile" => "index", 
 										"company" => "index"
 										);
-	
 	protected function __construct0() {
 		$this->getInputParams();
 		/**
@@ -67,8 +66,8 @@ class routing extends multiConstructor {
 		 * default format : default controller/action/id
 		 * */
 		$this->controller = $allParams[1];
-		$this->action = $allParams[2];
-		$this->specificID = $allParams[3];
+		isset ($allParams[2]) ? $this->action = $allParams[2] : $this->action = self::$map2default[$this->controller];
+		isset($allParams[3]) ? $this->specificID = $allParams[3] : null;
 		$this->postParms = $_GET;
 		$GLOBALS["PARAMS"] = $_POST;
 	}

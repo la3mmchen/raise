@@ -1,0 +1,15 @@
+--
+-- Table structure for project 'raise' 
+--
+
+--
+-- Table structure for table `tbl_company`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_company` (
+  `company_id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(500) NOT NULL,
+  `company_contact` varchar(500) NOT NULL,
+  `company_description` text NOT NULL,
+  PRIMARY KEY (`company_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

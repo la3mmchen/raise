@@ -19,5 +19,6 @@
  *
  * @property String  $GLOBALS['filePath_base']
  */
-$GLOBALS['filePath_base'] = "codeBase/"
+$GLOBALS['filePath_base'] = "codeBase/";
+$GLOBALS['title'] = "raise platform";
 ?>
