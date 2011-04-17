@@ -1,5 +1,0 @@
-<?
-class webapp extends html {
-	
-}
-?>
