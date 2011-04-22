@@ -4,3 +4,211 @@ in /home/alex/projects/raise/webapp/index.php (13)
 in /home/alex/projects/raise/webapp/index.php (13)
 2011/04/17 15:41:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'raise.company' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `company`.
 in /home/alex/projects/raise/webapp/index.php (13)
+2011/04/22 10:48:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in /home/alex/projects/yii/framework/web/CController.php:477
+Stack trace:
+#0 /home/alex/projects/yii/framework/web/CController.php(262): CController->missingAction('company')
+#1 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('company')
+#2 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('site/company')
+#3 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#4 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=site/company
+2011/04/22 10:48:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in /home/alex/projects/yii/framework/web/CController.php:477
+Stack trace:
+#0 /home/alex/projects/yii/framework/web/CController.php(262): CController->missingAction('company')
+#1 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('company')
+#2 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('company/company')
+#3 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#4 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=company/company
+2011/04/22 10:48:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in /home/alex/projects/yii/framework/web/CController.php:477
+Stack trace:
+#0 /home/alex/projects/yii/framework/web/CController.php(262): CController->missingAction('company')
+#1 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('company')
+#2 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('site/company')
+#3 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#4 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=site/company
+2011/04/22 11:31:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "locatiopn".' in /home/alex/projects/yii/framework/web/CWebApplication.php:332
+Stack trace:
+#0 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('locatiopn')
+#1 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#2 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=locatiopn
+2011/04/22 13:02:18 [error] [exception.CException] exception 'CException' with message 'Property "Company.company_location_aaa" is not defined.' in /home/alex/projects/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/alex/projects/yii/framework/db/ar/CActiveRecord.php(128): CComponent->__get('company_locatio...')
+#1 /home/alex/projects/yii/framework/web/helpers/CHtml.php(1697): CActiveRecord->__get('company_locatio...')
+#2 /home/alex/projects/yii/framework/zii/widgets/CDetailView.php(208): CHtml::value(Object(Company), 'company_locatio...')
+#3 /home/alex/projects/yii/framework/web/CBaseController.php(166): CDetailView->run()
+#4 /home/alex/projects/raise/webapp/protected/views/company/view.php(28): CBaseController->widget('zii.widgets.CDe...', Array)
+#5 /home/alex/projects/yii/framework/web/CBaseController.php(119): require('/home/alex/proj...')
+#6 /home/alex/projects/yii/framework/web/CBaseController.php(88): CBaseController->renderInternal('/home/alex/proj...', Array, true)
+#7 /home/alex/projects/yii/framework/web/CController.php(866): CBaseController->renderFile('/home/alex/proj...', Array, true)
+#8 /home/alex/projects/yii/framework/web/CController.php(779): CController->renderPartial('view', Array, true)
+#9 /home/alex/projects/raise/webapp/protected/controllers/CompanyController.php(55): CController->render('view', Array)
+#10 [internal function]: CompanyController->actionView('1')
+#11 /home/alex/projects/yii/framework/web/actions/CAction.php(104): ReflectionMethod->invokeArgs(Object(CompanyController), Array)
+#12 /home/alex/projects/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(CompanyController), Object(ReflectionMethod), Array)
+#13 /home/alex/projects/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#14 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#17 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#20 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('view')
+#22 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('company/view')
+#23 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#24 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#25 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=company/view&id=1
+2011/04/22 14:07:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested company does not exists' in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php:206
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany(NULL)
+#1 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#2 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#5 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#8 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#11 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#12 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#13 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create
+2011/04/22 14:07:30 [error] [exception.CException] exception 'CException' with message 'Property "LocationController._project" is not defined.' in /home/alex/projects/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(210): CComponent->__get('_project')
+#1 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany('3')
+#2 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#9 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#11 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#12 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#13 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#14 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create&cid=3
+2011/04/22 14:07:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested company does not exists' in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php:206
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany(NULL)
+#1 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#2 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#5 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#8 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#11 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#12 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#13 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create
+2011/04/22 14:08:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested company does not exists' in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php:206
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany(NULL)
+#1 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#2 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#5 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#8 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#11 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#12 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#13 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create
+2011/04/22 14:08:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested company does not exists' in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php:206
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany(NULL)
+#1 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#2 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#5 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#8 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#11 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#12 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#13 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create
+2011/04/22 14:10:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested company does not exists' in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php:206
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany(NULL)
+#1 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#2 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#5 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#8 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#11 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#12 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#13 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create
+2011/04/22 14:10:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested company does not exists' in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php:206
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany(NULL)
+#1 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#2 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#5 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#8 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#11 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#12 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#13 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create
+2011/04/22 14:13:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested company does not exists' in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php:206
+Stack trace:
+#0 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(193): LocationController->loadCompany(NULL)
+#1 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#2 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#3 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#5 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#8 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#10 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#11 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#12 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#13 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create
+2011/04/22 14:15:02 [error] [exception.CException] exception 'CException' with message 'Property "Location.company_id" is not defined.' in /home/alex/projects/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/alex/projects/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__set('company_id', '3')
+#1 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(70): CActiveRecord->__set('company_id', '3')
+#2 /home/alex/projects/yii/framework/web/actions/CInlineAction.php(50): LocationController->actionCreate()
+#3 /home/alex/projects/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#4 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /home/alex/projects/raise/webapp/protected/controllers/LocationController.php(196): CFilterChain->run()
+#6 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): LocationController->filterCompanyContext(Object(CFilterChain))
+#7 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/alex/projects/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /home/alex/projects/yii/framework/web/CController.php(1122): CFilter->filter(Object(CFilterChain))
+#10 /home/alex/projects/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/alex/projects/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/alex/projects/yii/framework/web/CController.php(283): CFilterChain->run()
+#13 /home/alex/projects/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/alex/projects/yii/framework/web/CWebApplication.php(328): CController->run('create')
+#15 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('location/create')
+#16 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#17 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#18 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=location/create&cid=3

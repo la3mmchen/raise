@@ -21,6 +21,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'user_pwd'); ?>
+		<?php echo $form->textField($model,'user_pwd',array('size'=>60,'maxlength'=>150)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'user_information'); ?>
 		<?php echo $form->textArea($model,'user_information',array('rows'=>6, 'cols'=>50)); ?>
 	</div>

@@ -1,23 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "tbl_user".
+ * This is the model class for table "tbl_location".
  *
- * The followings are the available columns in table 'tbl_user':
- * @property integer $user_id
- * @property string $user_name
- * @property string $user_contact
- * @property string $user_pwd
- * @property string $user_information
+ * The followings are the available columns in table 'tbl_location':
+ * @property integer $location_id
+ * @property integer $location_companyId
+ * @property string $location_name
+ * @property string $location_geo
  *
  * The followings are the available model relations:
- * @property Company[] $tblCompanys
+ * @property Company $locationCompany
  */
-class User extends CActiveRecord
+class Location extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return User the static model class
+	 * @return Location the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -29,7 +28,7 @@ class User extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_user';
+		return 'tbl_location';
 	}
 
 	/**
@@ -40,13 +39,12 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_name, user_contact, user_pwd, user_information', 'required'),
-			array('user_name', 'length', 'max'=>500),
-			array('user_contact', 'length', 'max'=>250),
-			array('user_pwd', 'length', 'max'=>150),
+			array('location_companyId, location_name', 'required'),
+			array('location_companyId', 'numerical', 'integerOnly'=>true),
+			array('location_name, location_geo', 'length', 'max'=>250),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('user_id, user_name, user_contact, user_pwd, user_information', 'safe', 'on'=>'search'),
+			array('location_id, location_companyId, location_name, location_geo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,7 +56,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'tblCompanys' => array(self::MANY_MANY, 'Company', 'tbl_company2user(company2user_userId, company2user_companyId)'),
+			'locationCompany' => array(self::BELONGS_TO, 'Company', 'location_companyId'),
 		);
 	}
 
@@ -68,11 +66,10 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'user_id' => 'User',
-			'user_name' => 'User Name',
-			'user_contact' => 'User Contact',
-			'user_pwd' => 'User Pwd',
-			'user_information' => 'User Information',
+			'location_id' => 'Location',
+			'location_companyId' => 'Location Company',
+			'location_name' => 'Location Name',
+			'location_geo' => 'Location Geo',
 		);
 	}
 
@@ -87,11 +84,10 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('user_name',$this->user_name,true);
-		$criteria->compare('user_contact',$this->user_contact,true);
-		$criteria->compare('user_pwd',$this->user_pwd,true);
-		$criteria->compare('user_information',$this->user_information,true);
+		$criteria->compare('location_id',$this->location_id);
+		$criteria->compare('location_companyId',$this->location_companyId);
+		$criteria->compare('location_name',$this->location_name,true);
+		$criteria->compare('location_geo',$this->location_geo,true);
 
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,

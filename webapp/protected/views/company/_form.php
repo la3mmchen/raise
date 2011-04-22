@@ -11,7 +11,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'company_name'); ?>
-		<?php echo $form->textArea($model,'company_name',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textField($model,'company_name',array('size'=>60,'maxlength'=>250)); ?>
 		<?php echo $form->error($model,'company_name'); ?>
 	</div>
 
@@ -22,9 +22,21 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'company_location'); ?>
+		<?php echo $form->textField($model,'company_location'); ?>
+		<?php echo $form->error($model,'company_location'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'company_description'); ?>
 		<?php echo $form->textArea($model,'company_description',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'company_description'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'company_branch'); ?>
+		<?php echo $form->dropDownList($model,'company_branch',$model->getTypeOptions()); ?>
+		<?php echo $form->error($model,'company_branch'); ?>
 	</div>
 
 	<div class="row buttons">

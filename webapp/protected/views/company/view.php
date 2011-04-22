@@ -10,6 +10,7 @@ $this->menu=array(
 	array('label'=>'Update Company', 'url'=>array('update', 'id'=>$model->company_id)),
 	array('label'=>'Delete Company', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->company_id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Company', 'url'=>array('admin')),
+	array('label'=>'Create Location', 'url'=>array('location/create', 'cid'=>$model->company_id)),
 );
 ?>
 
@@ -21,6 +22,9 @@ $this->menu=array(
 		'company_id',
 		'company_name',
 		'company_contact',
+		'company_location',
 		'company_description',
+		'company_branch',
 	),
 )); ?>
+<?php echo CHtml::link("add location for company", array('location/create', "company_id"=>$model->company_id));?>

@@ -1,28 +1,97 @@
-CREATE TABLE tbl_user (
-    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(128) NOT NULL,
-    password VARCHAR(128) NOT NULL,
-    email VARCHAR(128) NOT NULL
-);
+-- phpMyAdmin SQL Dump
+-- version 3.3.7deb5build0.10.10.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 22, 2011 at 11:30 AM
+-- Server version: 5.1.49
+-- PHP Version: 5.3.3-1ubuntu9.3
 
-INSERT INTO tbl_user (username, password, email) VALUES ('test1', 'pass1', 'test1@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test2', 'pass2', 'test2@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test3', 'pass3', 'test3@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test4', 'pass4', 'test4@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test5', 'pass5', 'test5@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test6', 'pass6', 'test6@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test7', 'pass7', 'test7@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test8', 'pass8', 'test8@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test9', 'pass9', 'test9@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test10', 'pass10', 'test10@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test11', 'pass11', 'test11@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test12', 'pass12', 'test12@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test13', 'pass13', 'test13@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test14', 'pass14', 'test14@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test15', 'pass15', 'test15@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test16', 'pass16', 'test16@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test17', 'pass17', 'test17@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test18', 'pass18', 'test18@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test19', 'pass19', 'test19@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test20', 'pass20', 'test20@example.com');
-INSERT INTO tbl_user (username, password, email) VALUES ('test21', 'pass21', 'test21@example.com');
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `raise`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_company`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_company` (
+  `company_id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(250) NOT NULL,
+  `company_contact` varchar(250) NOT NULL,
+  `company_location` int(11) DEFAULT NULL,
+  `company_description` text NOT NULL,
+  `company_branch` varchar(500) NOT NULL DEFAULT 'uncategorized',
+  PRIMARY KEY (`company_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `tbl_company`
+--
+
+INSERT INTO `tbl_company` (`company_id`, `company_name`, `company_contact`, `company_location`, `company_description`, `company_branch`) VALUES
+(1, 'lala_comp', 'lala@lalacompany.org', 0, 'lala lalalal lalalal la lal al \r\nalala\r\nlall', 'uncategorized'),
+(2, 'lelel_comp', 'lele_comp@lelecomp_.org', 0, 'kdsjfdggfd\r\ngsfd\r\ng\r\nsgdsfgdfsgdsfgdsfg\r\n sdfg dsfgdfs\r\ngdfsgsdfgsdgdfs', 'uncategorized'),
+(3, 'alex', 'alex@alae.org', 0, 'blubb', 'uncategorized'),
+(4, 'alex', 'alex@alae.org', 0, 'blubb', 'uncategorized'),
+(5, 'alex', 'alex@alae.org', 0, 'blubb', 'uncategorized'),
+(6, 'alex', 'alex@alae.org', 0, 'blubb', 'uncategorized');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_location`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_location` (
+  `location_id` int(11) NOT NULL AUTO_INCREMENT,
+  `location_companyId` int(11) NOT NULL,
+  `location_name` varchar(250) NOT NULL,
+  `location_geo` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`location_id`),
+  KEY `location_companyId` (`location_companyId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `tbl_location`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(500) NOT NULL,
+  `user_contact` varchar(250) NOT NULL,
+  `user_information` text NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_location`
+--
+ALTER TABLE `tbl_location`
+  ADD CONSTRAINT `tbl_location_ibfk_1` FOREIGN KEY (`location_companyId`) REFERENCES `tbl_company` (`company_id`) ON DELETE CASCADE;

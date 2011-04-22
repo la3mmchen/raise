@@ -22,6 +22,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'user_pwd'); ?>
+		<?php echo $form->textField($model,'user_pwd',array('size'=>60,'maxlength'=>150)); ?>
+		<?php echo $form->error($model,'user_pwd'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'user_information'); ?>
 		<?php echo $form->textArea($model,'user_information',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'user_information'); ?>

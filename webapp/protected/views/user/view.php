@@ -21,6 +21,7 @@ $this->menu=array(
 		'user_id',
 		'user_name',
 		'user_contact',
+		'user_pwd',
 		'user_information',
 	),
 )); ?>

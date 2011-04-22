@@ -12,8 +12,16 @@
 	<?php echo CHtml::encode($data->company_contact); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('company_location')); ?>:</b>
+	<?php echo CHtml::encode($data->company_location); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('company_description')); ?>:</b>
 	<?php echo CHtml::encode($data->company_description); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('company_branch')); ?>:</b>
+	<?php echo CHtml::encode($data->company_branch); ?>
 	<br />
 
 
