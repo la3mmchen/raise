@@ -27,4 +27,3 @@ $this->menu=array(
 		'company_branch',
 	),
 )); ?>
-<?php echo CHtml::link("add location for company", array('location/create', "company_id"=>$model->company_id));?>
