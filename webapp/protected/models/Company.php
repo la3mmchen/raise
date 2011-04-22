@@ -8,6 +8,7 @@
  * @property string $company_name
  * @property string $company_contact
  * @property integer $company_location
+ * @property integer $company_locationCount
  * @property string $company_description
  * @property string $company_branch
  *  *
@@ -47,12 +48,12 @@ class Company extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('company_name, company_contact, company_description', 'required'),
-			array('company_location', 'numerical', 'integerOnly'=>true),
+			array('company_location, company_locationCount', 'numerical', 'integerOnly'=>true),
 			array('company_name, company_contact', 'length', 'max'=>250),
 			array('company_branch', 'length', 'max'=>500),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('company_id, company_name, company_contact, company_location, company_description, company_branch', 'safe', 'on'=>'search'),
+			array('company_id, company_name, company_contact, company_location, company_locationCount, company_description, company_branch', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -79,6 +80,7 @@ class Company extends CActiveRecord
 			'company_name' => 'Company Name',
 			'company_contact' => 'Company Contact',
 			'company_location' => 'Company Location',
+			'company_locationCount' => 'Company Location Count',
 			'company_description' => 'Company Description',
 			'company_branch' => 'Company Branch',
 		);
@@ -99,6 +101,7 @@ class Company extends CActiveRecord
 		$criteria->compare('company_name',$this->company_name,true);
 		$criteria->compare('company_contact',$this->company_contact,true);
 		$criteria->compare('company_location',$this->company_location);
+		$criteria->compare('company_locationCount',$this->company_locationCount);
 		$criteria->compare('company_description',$this->company_description,true);
 		$criteria->compare('company_branch',$this->company_branch,true);
 

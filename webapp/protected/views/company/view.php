@@ -23,7 +23,17 @@ $this->menu=array(
 		'company_name',
 		'company_contact',
 		'company_location',
+		'company_locationCount',
 		'company_description',
 		'company_branch',
 	),
 )); ?>
+
+<div id="locations">
+	<?php if($model->company_locationCount >= 1) : ?>
+		<h3>
+			<?php echo $model->company_locationCount ? $model->company_locationCount . ' Locations' : 'One Location'?>
+		</h3>
+		<?php $this->renderPartial('_locations', array('locations'=>$model->locations,));?>
+		<?php endif; ?>
+</div>

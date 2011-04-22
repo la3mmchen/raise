@@ -16,6 +16,11 @@
 	<?php echo CHtml::encode($data->company_location); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('company_locationCount')); ?>:</b>
+	<?php echo CHtml::encode($data->company_locationCount); ?>
+	
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('company_description')); ?>:</b>
 	<?php echo CHtml::encode($data->company_description); ?>
 	<br />

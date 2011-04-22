@@ -25,6 +25,12 @@
 		<?php echo $form->labelEx($model,'company_location'); ?>
 		<?php echo $form->textField($model,'company_location'); ?>
 		<?php echo $form->error($model,'company_location'); ?>
+		</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'company_locationCount'); ?>
+		<?php echo $form->textField($model,'company_locationCount'); ?>
+		<?php echo $form->error($model,'company_locationCount'); ?>
 	</div>
 
 	<div class="row">
