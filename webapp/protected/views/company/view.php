@@ -14,7 +14,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Company #<?php echo $model->company_id; ?></h1>
+<h1>View Company: <ins><?php echo $model->company_name; ?></ins></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
