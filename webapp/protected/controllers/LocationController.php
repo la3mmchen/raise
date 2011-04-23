@@ -68,7 +68,7 @@ class LocationController extends Controller
 	{
 		$model=new Location;
 		$model->location_companyId = $this->_company->company_id;
-
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Location</h1>
+<h1>Create Location for company <ins><?php echo $_GET['cname']?></ins></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
