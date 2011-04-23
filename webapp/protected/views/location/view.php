@@ -10,6 +10,7 @@ $this->menu=array(
 	array('label'=>'Update Location', 'url'=>array('update', 'id'=>$model->location_id)),
 	array('label'=>'Delete Location', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->location_id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Location', 'url'=>array('admin')),
+	array('label'=>'Available Skills', 'url'=>array('skill/create', 'cid'=>$model->location_id, 'cname'=>$model->location_name)),
 );
 ?>
 

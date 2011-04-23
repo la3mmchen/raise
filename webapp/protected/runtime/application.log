@@ -567,3 +567,15 @@ REQUEST_URI=/projects/raise/webapp/index.php?r=location/create&cid=1&cname=lala_
 in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php (74)
 in /home/alex/projects/raise/webapp/protected/controllers/LocationController.php (200)
 in /home/alex/projects/raise/webapp/index.php (13)
+2011/04/23 07:36:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ocation/create".' in /home/alex/projects/yii/framework/web/CWebApplication.php:332
+Stack trace:
+#0 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('ocation/create')
+#1 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#2 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=ocation/create&cid=1&cname=karlsruhe
+2011/04/23 07:36:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "skill/create".' in /home/alex/projects/yii/framework/web/CWebApplication.php:332
+Stack trace:
+#0 /home/alex/projects/yii/framework/web/CWebApplication.php(121): CWebApplication->runController('skill/create')
+#1 /home/alex/projects/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
+#2 /home/alex/projects/raise/webapp/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/projects/raise/webapp/index.php?r=skill/create&cid=1&cname=karlsruhe
