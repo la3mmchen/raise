@@ -174,8 +174,7 @@ CREATE TABLE IF NOT EXISTS `tbl_location` (
   `location_id` int(11) NOT NULL AUTO_INCREMENT,
   `location_companyId` int(11) NOT NULL,
   `location_name` varchar(250) NOT NULL,
-  PRIMARY KEY (`location_id`,`location_companyId`),
-  KEY `location_companyId` (`location_companyId`)
+  PRIMARY KEY (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --

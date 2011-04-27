@@ -11,6 +11,7 @@ $this->menu=array(
 	array('label'=>'Delete Company', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->company_id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Company', 'url'=>array('admin')),
 	array('label'=>'Add to Businessbranch', 'url'=>array('assign', 'cid'=>$model->company_id)),
+	array('label'=>'Create Location', 'url'=>array('location/create', 'cid'=>$model->company_id, 'cname'=>$model->company_name)),
 );
 ?>
 
