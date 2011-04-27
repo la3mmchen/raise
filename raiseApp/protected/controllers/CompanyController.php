@@ -154,14 +154,20 @@ class CompanyController extends Controller
 	 */
 	public function actionAssign($cid)
 	{
-		if (isset($_GET['cid'])) {
+		if (isset($_POST['Businessbranch'])) {
+			$businessbranchModel = $_POST['Businessbranch'];
+			$this->associateCompanyToBranch(array($_POST['Businessbranch']['businessbranch_name'] => $cid));
+		}
+		else if (isset($_GET['cid'])) {
 		$model=Company::model()->findByPk((int)$cid);
 		$this->render('assign',array(
 			'model'=>$model,
 		));
 		}
-		else 
-			echo "lu";
+		
+		$this->render('view',array(
+			'model'=>$this->loadModel($cid),
+		));
 		
 	}
 
@@ -196,6 +202,7 @@ class CompanyController extends Controller
 	 */
 	public function associateCompanyToBranch($array)
 	{
+		var_dump($array);
 		$branId = array_keys($array);
 		$compId = $array[$branId[0]];
 		$branId = Businessbranch::model()->find('businessbranch_name LIKE "'.$branId[0].'"');

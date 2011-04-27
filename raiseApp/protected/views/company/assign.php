@@ -16,13 +16,13 @@ $this->menu=array(
 	$array = array();
 	$availableBranches = Businessbranch::model()->findAll();
 	foreach($availableBranches as $item) {
-		array_push($array, $item->businessbranch_name);
+		$array[$item->businessbranch_name] = $item->businessbranch_name;
 	}	
 	$form=$this->beginWidget('CActiveForm', array(
 		'id'=>'company-assign',
 		'enableAjaxValidation'=>false,
 	));
-	echo $form->dropDownList($model, 'company_id', $array);
+	echo $form->dropDownList(Businessbranch::model(), 'businessbranch_name', $array);
 	
 	echo "<br/>";
 	
